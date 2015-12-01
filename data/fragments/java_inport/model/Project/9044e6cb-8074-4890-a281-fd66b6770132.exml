@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="java_inport" version="4">
+  <OBJECT>
+    <ID name="java_inport" mc="Standard.Project" uid="9044e6cb-8074-4890-a281-fd66b6770132"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[java_inport]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="DiagramRoot">
+        <COMPID name="java_inport" mc="Standard.DiagramSet" uid="2f01418e-4dc8-46bc-a4e3-c45de0917153"/>
+      </COMP>
+      <COMP relation="Model">
+        <COMPID name="java_inport" mc="Standard.Package" uid="1848a7bb-4fef-4329-be79-2d396a8233cc"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
