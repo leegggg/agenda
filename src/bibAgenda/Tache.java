@@ -11,6 +11,10 @@ public class Tache{
 	public ArrayList<Ressource> tableRessource;
   //public Employe employe;
   //public Service service;
+	
+	public static exist(Tache t){
+		return (t!=null)&&(t.etat!=-1);
+	}
    
 
   public boolean verifier(int jour,int creneau){
@@ -36,7 +40,7 @@ public class Tache{
   }
 	//annuler
 	public boolean annuler(){
-		boolean res = (etat!=-1);
+		boolean res = (etat==0);
 		etat = -1;
 		return res;
 	}

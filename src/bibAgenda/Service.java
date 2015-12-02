@@ -72,7 +72,7 @@ public class Service{
 			}
 		}
 		if(!flagTraiter){
-			annulerDemande(tache);
+			tache.annuler();
 		}
 		return flagTraiter;
 	}
