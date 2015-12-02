@@ -7,12 +7,12 @@ public class Tache{
   public String nature;
   public int nbCreneaux;
   public int etat;
-	public int capaciteInitRes = 3;
-	public ArrayList<Ressource> tableRessource;
+	//public int capaciteInitRes = 3;
+	public List<Ressource> tableRessource;
   //public Employe employe;
   //public Service service;
 	
-	public static exist(Tache t){
+	public static boolean exist(Tache t){
 		return (t!=null)&&(t.etat!=-1);
 	}
    
@@ -32,7 +32,7 @@ public class Tache{
 	}
 //methodes a programmer	 
   public Tache(String nat, int nbc){
-		tableRessource = new ArrayList<Ressource>(capaciteInitRes);
+		tableRessource = new ArrayList<Ressource>();
     nature = nat;
     nbCreneaux = nbc;
     etat = 0;
