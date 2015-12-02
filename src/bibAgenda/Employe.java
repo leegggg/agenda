@@ -23,6 +23,7 @@ public class Employe extends Ressource {
 		return getNumRes();
 	}
 	
+	
 	public String getNomEmp(){
 		return getNomRes();
 	}

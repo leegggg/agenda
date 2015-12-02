@@ -26,6 +26,11 @@ abstract public class Ressource {
 		
 	}
 	
+	
+	public void ajouterTache(int jour,int creneau,Tache tache){
+	  emploiTemps.ajouterTache(jour, creneau, tache);  
+  }
+
 	public String toString(){
 		return getNumRes()+"  "+getNomRes();
 	}

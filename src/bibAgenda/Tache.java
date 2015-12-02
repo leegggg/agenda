@@ -26,8 +26,8 @@ public class Tache{
 	}
   
   public void addEmploiTempsRessource(int jour,int creneau){
-		for(Ressource R:tableRessource){
-			R.emploiTemps.ajouterTache(jour, creneau, this);
+		for(Ressource r:tableRessource){
+			r.emploiTemps.ajouterTache(jour, creneau, this);
 		}
 	}
 //methodes a programmer	 
