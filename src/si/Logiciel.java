@@ -15,7 +15,7 @@ public class Logiciel extends Ressource {
 	}	
 	
 	public Logiciel(String nom,String version,String taille,String data,String editeur) {
-	  this(nom,num,ver,tai,da,edit);
+	  this(nom,nom,version,taille,data,editeur);
 	}
 
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="list&lt;EmployTemps&gt;" version="4">
+  <OBJECT>
+    <ID name="list&lt;EmployTemps&gt;" mc="Standard.Class" uid="5a2720dc-8cac-4728-9e83-d7da18c60b36"/>
+    <PID name="java_inport" mc="Standard.Package" uid="1848a7bb-4fef-4329-be79-2d396a8233cc"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[list<EmployTemps>]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

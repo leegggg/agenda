@@ -32,6 +32,8 @@
         <COMPID name="Logiciel" mc="Standard.Class" uid="7a996b0f-041e-43f4-a9ac-c5688bfd340b"/>
         <COMPID name="Materiel" mc="Standard.Class" uid="0cb5b7af-ae69-4088-836d-5d11ad66f34b"/>
         <COMPID name="ServiceInfo" mc="Standard.Class" uid="3146a4ae-64a1-4b70-bbe5-9dfc59c577ce"/>
+        <COMPID name="TacheLogiciel" mc="Standard.Class" uid="6df5d358-851c-4a23-b23e-79b1cf4be17c"/>
+        <COMPID name="TacheMateriel" mc="Standard.Class" uid="97fc1cba-ff24-449f-8306-40470e01b7c5"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Standard.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
