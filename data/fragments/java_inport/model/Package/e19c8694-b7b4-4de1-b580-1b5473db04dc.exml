@@ -48,6 +48,7 @@
         <COMPID name="ServiceEntretien" mc="Standard.Class" uid="5eb16d0b-f9de-44ec-bafd-6b3e06796d64"/>
         <COMPID name="Salle" mc="Standard.Class" uid="96c0d9c3-9ceb-400a-bb8d-4c2e532b7022"/>
         <COMPID name="AppEnt" mc="Standard.Class" uid="d949de69-6c68-4f14-8c1a-98bdb29e44ce"/>
+        <COMPID name="TacheSalle" mc="Standard.Class" uid="a082f498-866a-4d2f-a931-4a3a58376339"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Standard.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

@@ -16,10 +16,8 @@
       <COMP relation="OwnedElement">
         <COMPID name="EmploiTemps" mc="Standard.Class" uid="d05ad23d-477c-4515-b788-0bfcfc345848"/>
         <COMPID name="Employe" mc="Standard.Class" uid="15d5d1d9-5f81-4d63-8279-847257483804"/>
-        <COMPID name="Service" mc="Standard.Class" uid="2da508fe-030e-4498-b99c-634233166085"/>
         <COMPID name="Tache" mc="Standard.Class" uid="5928e688-b808-40a4-90ab-b7a6f433459d"/>
         <COMPID name="Application" mc="Standard.Class" uid="386fa9a0-10f2-4c2e-b4d4-d2a3d15f516b"/>
-        <COMPID name="Ressource" mc="Standard.Class" uid="076801da-157d-42cb-abd8-4e0838e43e31"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Standard.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
