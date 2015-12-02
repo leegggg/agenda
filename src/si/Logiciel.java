@@ -12,6 +12,10 @@ public class Logiciel extends Ressource {
 		taille = tai;
 		date = da;
 		editeur = edit;
+	}	
+	
+	public Logiciel(String nom,String version,String taille,String data,String editeur) {
+	  this(nom,num,ver,tai,da,edit);
 	}
 
 }

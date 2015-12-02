@@ -536,7 +536,7 @@ tableTache.add(tache);
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Standard.TaggedValue" uid="c4626f7b-ac12-402f-996e-e2f15ebebfda"/>
+                <ID name="" mc="Standard.TaggedValue" uid="16539a5b-f6ac-46c9-b0aa-a9d8a8d1368e"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

@@ -688,7 +688,7 @@ for (Employe E : tableEmploye){
     }
 }
 if(!flagTraiter){
-    tache.etat=-1;
+    tache.annuler();
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -918,7 +918,7 @@ if(!flagTraiter){
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Standard.TaggedValue" uid="0e31416e-2716-4e54-8c33-a154c7efbbf4"/>
+                <ID name="" mc="Standard.TaggedValue" uid="a9e0de07-60bb-469d-a7b1-416121e46bc7"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1015,7 +1015,7 @@ if(!flagTraiter){
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Standard.TaggedValue" uid="e941b050-4425-4717-b02c-5f6b8421ed58"/>
+                <ID name="" mc="Standard.TaggedValue" uid="b385e495-50fc-4fec-b5f5-8388e381c194"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

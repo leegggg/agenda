@@ -702,7 +702,7 @@ for(int ptJour = 0;ptJour<nbJour;ptJour++){
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Standard.TaggedValue" uid="e61acc7e-4a68-4980-8274-1dc5d8b1858e"/>
+                <ID name="" mc="Standard.TaggedValue" uid="8337ebaf-931c-4c7c-b59b-a946eb07e139"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

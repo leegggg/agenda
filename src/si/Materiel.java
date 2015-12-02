@@ -20,5 +20,5 @@ public class Materiel extends Ressource {
 	  this(nom, nom,mark,proc,hdd,tailleRAM);
 	}
 	
-
+  
 }

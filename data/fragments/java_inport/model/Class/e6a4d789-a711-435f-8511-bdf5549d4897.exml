@@ -77,20 +77,72 @@
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Standard.Note" uid="5f99759a-ba3c-4ab2-a33c-ba7565a5cda9"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Service service = new Service();
+
+
+service.ajouterEmploye("lin","0");
+service.ajouterEmploye("chen","1");
+for(int i = 0;i<=30;i++){
+    
+    if(service.traiterDemande("test"+i,i%5+1)){
+        System.out.println("Add  "+"test"+i+"  "+i%5+1);
+    }else{
+        System.out.println("FAL  "+"test"+i+"  "+i%5+1);
+    }
+    if(i%6 == 4){
+      service.annulerDemande(service.tableTache.get(i-3));
+        System.out.println("ANU  "+service.tableTache.get(i-3).toString());
+    }
+}
+
+
+System.out.println(service.listeEmploye());
+System.out.println(service.getStringEmploiTemps());
+System.out.println(service.tableEmploye.get(1).emploiTemps.verifier(4,0,4));
+System.out.println(service.tableEmploye.get(1).emploiTemps.verifier(4,2,4));
+System.out.println(service.tableEmploye.get(1).emploiTemps.verifier(4,4,4));
+System.out.println(service.tableEmploye.get(1).emploiTemps.verifier(4,5,4));
+System.out.println(service.tableEmploye.get(1).emploiTemps.verifier(4,6,1));
+System.out.println(service.tableEmploye.get(1).emploiTemps.verifier(4,5,2));
+System.out.println(service.tableEmploye.get(1).emploiTemps.verifier(4,5,3));
+System.out.println(service.tableEmploye.get(1).emploiTemps.verifier(4,5,4));
+System.out.println(service.tableEmploye.get(1).emploiTemps.verifier(4,5,5));
+System.out.println(service.tableEmploye.get(1).emploiTemps.verifier(4,5,6));
+//Ranger des ouvrages:
+
+//Permettre a l'utilisateur d'emprunter/retourner un ouvrage
+//en demandant son code.
+//Transformer les exceptions en message d'erreur.
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Standard.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
           </DEPENDENCIES>
         </OBJECT>
       </COMP>
-      <COMP relation="OwnedPackageImport">
+      <COMP relation="OwnedImport">
         <OBJECT>
-          <ID name="" mc="Standard.PackageImport" uid="2f76b9b7-aaf6-4d9f-a5ba-a827a6eefc75"/>
+          <ID name="" mc="Standard.ElementImport" uid="6c91c833-0a3e-44f4-bd94-50c1e44bf2de"/>
           <ATTRIBUTES>
             <ATT name="Visibility">Private</ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
-            <LINK relation="ImportedPackage">
-              <ID name="si" mc="Standard.Package" uid="4b511a23-087b-4edb-921d-03f84b330073"/>
+            <LINK relation="ImportedElement">
+              <ID name="Service" mc="Standard.Class" uid="2da508fe-030e-4498-b99c-634233166085"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
@@ -98,6 +150,96 @@
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Standard.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Standard.Note" uid="c572e41e-7af8-4f6f-9e23-b86071869772"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[/*
+
+import java.util.*;
+
+
+public class Service{
+    public int capaciteInitEmploye = 16;
+    public int capaciteInitTache = 16;
+    public ArrayList<Employe> tableEmploye;
+    public ArrayList<Tache> tableTache;
+    
+    
+    public Service(){
+        tableEmploye = new ArrayList<Employe>(capaciteInitEmploye);
+        tableTache = new ArrayList<Tache>(capaciteInitTache);
+        
+        
+    }
+    
+    
+    public boolean ajouterEmploye(String nom,int num){
+        return tableEmploye.add(new Employe(nom,num));
+    }
+    
+    public String listeEmploye(){
+        String liste = "";
+        for (Employe E : tableEmploye)
+        {
+            liste=liste+E.getNumEmp()+":\t"+E.nomEmp+"\n";
+        }
+        
+        return liste;
+        
+    }
+    
+    public String getStringEmploiTemps(Employe employe){
+        return employe.emploiTemps.toString();
+    }
+    
+    
+    public String getStringEmploiTemps(){
+        String liste = "";
+        for (Employe E : tableEmploye)
+        {
+            liste=liste+E.getNumEmp()+":\t"+E.nomEmp+"\n"+getStringEmploiTemps(E)+"\n";
+        }
+        
+        return liste;        
+    }
+    
+    
+    public boolean traiterDemande(String nature,int nbCreneaux){
+        Tache tache = new Tache(nature,nbCreneaux);
+        tableTache.add(tache);
+        boolean flagTraiter = false;
+        for (Employe E : tableEmploye){
+            if(E.ajouterTache(tache)){
+                flagTraiter = true;
+            }
+        }
+        return flagTraiter;
+    }
+    
+    
+    public void annulerDemande(Tache tache){
+        tache.annuler();        
+    }
+    
+    
+}
+
+
+
+
+*/]]></ATT>
+            <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="JavaBottom" mc="Standard.NoteType" uid="003800a8-0000-015c-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

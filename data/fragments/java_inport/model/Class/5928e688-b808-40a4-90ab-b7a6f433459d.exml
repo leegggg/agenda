@@ -101,21 +101,6 @@
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Standard.Note" uid="caadd438-cbd4-4edd-a515-a77364ad835d"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[//public Employe employe;
-//public Service service;]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaComment" mc="Standard.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
                 <ID name="" mc="Standard.Note" uid="2911c157-b93f-4243-bb53-b832c8152b18"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return res;]]></ATT>
@@ -471,8 +456,8 @@ for(Ressource r: tableRessource){
               <OBJECT>
                 <ID name="" mc="Standard.Note" uid="151a2f45-c480-4fbd-b7bc-122ee9f0cb44"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[for(Ressource R:tableRessource){
-    R.emploiTemps.ajouterTache(jour, creneau, this);
+                  <ATT name="Content"><![CDATA[for(Ressource r:tableRessource){
+    r.emploiTemps.ajouterTache(jour, creneau, this);
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -482,6 +467,76 @@ for(Ressource r: tableRessource){
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaCode" mc="Standard.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="exist" mc="Standard.Operation" uid="2d1a2495-febb-4c02-b5dd-22173de7338e"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[exist]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="t" mc="Standard.Parameter" uid="2a032dbf-fabf-4f45-b795-e8fb30e8d64f"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[t]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Tache" mc="Standard.Class" uid="5928e688-b808-40a4-90ab-b7a6f433459d"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Standard.Note" uid="feae9c7f-5a3d-45f1-9867-85c641381eca"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[//public Employe employe;
+//public Service service;]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaComment" mc="Standard.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Standard.Note" uid="ba3ebe6f-5663-4219-be31-90ab5c5b80f6"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return (t!=null)&&(t.etat!=-1);]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="Standard.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -514,7 +569,7 @@ for(Ressource r: tableRessource){
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Standard.TaggedValue" uid="d51b57c9-87d4-4d03-9508-18c5711a6c40"/>
+                <ID name="" mc="Standard.TaggedValue" uid="20e2630f-95ab-4f4c-a433-f37b56f6a1c5"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -552,7 +607,7 @@ for(Ressource r: tableRessource){
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Standard.TaggedValue" uid="4d20ec32-4393-4a98-a38c-842f9b1bd780"/>
+                <ID name="" mc="Standard.TaggedValue" uid="b2b675de-6bdd-4aff-96f3-826a1b5d6b2e"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -590,7 +645,7 @@ for(Ressource r: tableRessource){
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Standard.TaggedValue" uid="6151ae99-8a8d-4faa-8dfb-80c64e53fa4e"/>
+                <ID name="" mc="Standard.TaggedValue" uid="516026ba-8dc2-4e82-bd12-feafd737893c"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -713,7 +768,7 @@ for(Ressource r: tableRessource){
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Standard.TaggedValue" uid="47d91ce1-5f91-405e-936c-cd458a211691"/>
+                <ID name="" mc="Standard.TaggedValue" uid="35c8118a-d3a3-4d3c-96ef-32ad44348179"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
