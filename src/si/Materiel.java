@@ -1,24 +1,30 @@
 package si;
 
-import bibAgenda.Ressource;
+
 
 public class Materiel extends Ressource {
 	
+	private static final long serialVersionUID = -8673490206307555698L;
 	public String marque;
 	public String processeur;
 	public String hd;
-	public int ram;
-	public Materiel(String nom, String num,String marque,String proc,String hdd,int tailleRAM) {
-		super(nom, num);
+	public String ram;
+	
+	
+	
+	public Materiel(String nom, String marque, String processeur, String hd,String ram) {
+		super(nom);
 		this.marque = marque;
-		processeur = proc;
-		hd = hdd;
-		ram = tailleRAM;
+		this.processeur = processeur;
+		this.hd = hd;
+		this.ram = ram;
 	}
-	
-	public Materiel(String nom,String mark,String proc,String hdd,int tailleRAM) {
-	  this(nom, nom,mark,proc,hdd,tailleRAM);
+	public boolean equals(String nom){
+	      return nom.equals(this.getNom());
 	}
-	
-  
+	public String toString(){
+		return getNom()+"\t"+marque+"\t"+processeur;
+	}
+
+
 }

@@ -1,20 +1,20 @@
 package bibAgenda;
 
+import java.io.Serializable;
 import java.util.*;
 
 
-public class Service{
-	public int capaciteInitEmploye = 16;
-	public int capaciteInitTache = 16;
-	public ArrayList<Employe> tableEmploye;
-	public ArrayList<Tache> tableTache;
+public class Service implements Serializable{
+
+	private static final long serialVersionUID = -4744540515311124371L;
+	public List<Employe> tableEmploye;
+	public List<Tache> tableTacheAffectes;
+
 	
 	
 	public Service(){
-		tableEmploye = new ArrayList<Employe>(capaciteInitEmploye);
-		tableTache = new ArrayList<Tache>(capaciteInitTache);
-		
-		
+		tableEmploye = new ArrayList<Employe>();
+		tableTacheAffectes = new ArrayList<Tache>();
 	}
 	
 	
@@ -22,65 +22,51 @@ public class Service{
 		return tableEmploye.add(new Employe(nom,num));
 	}
 	
-	public String listeEmploye(){
-		String liste = "";
-		for (Employe E : tableEmploye)
-		{
-			liste=liste+E.toString()+"\n";
-		}
+	public List<Employe> getListeEmploye(){
 		
-		return liste;
+		return this.tableEmploye;
 		
 	}
 	
-	public String getStringEmploiTemps(Employe employe){
-		return employe.emploiTemps.toString();
+	public EmploiTemps getEmploiTemps(Employe employe){
+		return employe.getEmploiTemps();
 	}
 	
 	
-	public String getStringEmploiTemps(){
-		String liste = "";
-		for (Employe E : tableEmploye)
+	public List<EmploiTemps> getEmploiTemps(){
+		List<EmploiTemps> liste = new ArrayList<EmploiTemps>();
+		for (Employe e : tableEmploye)
 		{
-			liste=liste+E.toString()+"\n"+getStringEmploiTemps(E)+"\n";
+			liste.add(e.getEmploiTemps());
 		}
-		
 		return liste;		
 	}
 	
-	public boolean traiterDemande(String nature,int nbCreneaux){
-		return traiterDemande(ajouterTache(nature,nbCreneaux));
-	}
 	
-	
-	public Tache ajouterTache(String nature,int nbCreneaux){
+	public Tache traiterDemande(String nature,int nbCreneaux){
 		Tache tache = new Tache(nature,nbCreneaux);
-		tableTache.add(tache);
-		return tache;
+		return traiterDemande(tache);
+
 	}
 	
-	
-	public boolean traiterDemande(Tache tache){
-		if(tache==null){
-			return false;
-		}
-		boolean flagTraiter = false;
+	public Tache traiterDemande(Tache tache){
 		for (Employe E : tableEmploye){
 			if(E.ajouterTache(tache)){
-				flagTraiter = true;
-				break;
+				tableTacheAffectes.add(tache);
+				return tache;
 			}
 		}
-		if(!flagTraiter){
-			tache.annuler();
-		}
-		return flagTraiter;
+		return null;	
 	}
 	
 	
 	public boolean annulerDemande(Tache tache){
-		return tache.annuler();
+		for (Employe E : tableEmploye){
+			if(E.annulerDemande(tache)){
+				tableTacheAffectes.remove(tache);
+				return true;
+			}
+		}		
+		return false;
 	}
-	
-	
 }

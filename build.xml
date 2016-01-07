@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="agenda">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="agenda.classpath">
+        <pathelement location="bin"/>
+    </path>
+    <path id="run.AppConsole.classpath">
+        <pathelement location="lib/xerces.jar"/>
+        <path refid="agenda.classpath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="build-project" name="build"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="agenda.classpath"/>
+        </javac>
+    </target>
+    <target name="AppSI">
+        <java classname="si.AppConsole" failonerror="true" fork="yes">
+            <classpath refid="run.AppConsole.classpath"/>
+        </java>
+    </target>
+    <target name="AppEnt">
+        <java classname="entretien.AppConsole" failonerror="true" fork="yes">
+            <classpath refid="run.AppConsole.classpath"/>
+        </java>
+    </target>
+    <target name="GUInterface">
+        <java classname="ihm.GUInterface" failonerror="true" fork="yes">
+            <classpath refid="agenda.classpath"/>
+        </java>
+    </target>
+</project>

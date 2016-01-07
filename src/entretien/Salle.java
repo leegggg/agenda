@@ -1,14 +1,22 @@
 package entretien;
-import bibAgenda.Ressource;
 
 
-public class Salle extends Ressource {
+
+public class Salle{
+	private String numSalle;
 	
-	public Salle(String nom, String num) {
-		super(nom, num);
+	public Salle(String numSalle) {
+		this.numSalle = numSalle;
 	}
-  public Salle(String nom) {
-		super(nom, nom);
+
+	public String getNumSalle() {
+		return numSalle;
 	}
+
+	public void setNumSalle(String numSalle) {
+		this.numSalle = numSalle;
+	}
+	
+	
 
 }

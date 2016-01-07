@@ -1,0 +1,75 @@
+<docbase>
+
+<logiciel>
+	<nom>java</nom>
+	<version>1.7.0_51</version>
+	<taille>200</taille>
+	<date>2014-01-31</date>
+	<editeur>oracle</editeur>
+</logiciel>
+
+<logiciel>
+	<nom>eclipse</nom>
+	<version>4.3.0</version>
+	<taille>500</taille>
+	<date>2013-05-29</date>
+	<editeur>eclipse.org</editeur>
+</logiciel>
+
+<logiciel>
+	<nom>modelio</nom>
+	<version>3.2</version>
+	<taille>100</taille>
+	<date>2014-11-20</date>
+	<editeur>softeam</editeur>
+</logiciel>
+
+<logiciel>
+	<nom>openoffice</nom>
+	<version>4.1.1</version>
+	<taille>400</taille>
+	<date>2014-08-10</date>
+	<editeur>oracle</editeur>
+</logiciel>
+
+<logiciel>
+	<nom>postgres</nom>
+	<version>9.3</version>
+	<taille>50</taille>
+	<date>2014-01-01</date>
+	<editeur>postgres</editeur>
+</logiciel>
+
+<materiel>
+	<nom>lyderic01</nom>
+	<marque>Dell</marque>
+	<processeur>Core-I5</processeur>
+	<hd>500GO</hd>
+	<ram>8</ram>
+</materiel>
+
+<materiel>
+	<nom>florine01</nom>
+	<marque>HP</marque>
+	<processeur>IntelE8400</processeur>
+	<hd>200</hd>
+	<ram>2</ram>
+</materiel>
+
+<materiel>
+	<nom>reuze10</nom>
+	<marque>Dell</marque>
+	<processeur>Core-I5</processeur>
+	<hd>500GO</hd>
+	<ram>16</ram>
+</materiel>
+
+<materiel>
+	<nom>phinaert04</nom>
+	<marque>Dell</marque>
+	<processeur>Core-I5</processeur>
+	<hd>500GO</hd>
+	<ram>8</ram>
+</materiel>
+
+</docbase>

@@ -1,42 +1,45 @@
 package entretien;
-
 import java.util.ArrayList;
+import java.util.List;
 
 import bibAgenda.Service;
-import bibAgenda.Tache;
+
 
 public class ServiceEntretien extends Service {
-	public int capaciteInitSalle = 16;
+
 	
-	public ArrayList<Salle> tableSalle;
+
+	private static final long serialVersionUID = -3678954995401306818L;
+	public List<Salle> tableSalle;
 	public ServiceEntretien() {
 		super();
-		tableSalle = new ArrayList<Salle>(capaciteInitSalle);
+		tableSalle = new ArrayList<Salle>();
 	}
 	
-	public boolean ajouterSalle(String nom,String num){
-		return tableSalle.add(new Salle(nom,num));
+	public boolean ajouterSalle(String numSalle){
+		return tableSalle.add(new Salle(numSalle));
 	}
 	
-	public Tache ajouterTache(String nature,int nbCreneaux,String numSalle){
+	
+	
+	public TacheSalle traiterDemande(String nature,int nbCreneaux,String numSalle)throws SalleNotFoundException{
 		Salle salle = null;
 		for(Salle s : tableSalle){
-			if(s.getNumRes().equals(numSalle)){
+			if(s.getNumSalle().equals(numSalle)){
 				salle = s;
 			}
 		}
 		if(salle == null){
-			return null;
+			throw new SalleNotFoundException();
 		}
-		Tache tache = new Tache(nature,nbCreneaux);
-		tache.tableRessource.add(salle);
-		tableTache.add(tache);
-		return tache;		
+		
+		TacheSalle tache = new TacheSalle(nature,nbCreneaux,salle);
+		return (TacheSalle) traiterDemande(tache);
 	}
-	
-	
-	
-	public boolean traiterDemande(String nature,int nbCreneaux,String numSalle){
-		return traiterDemande(ajouterTache(nature,nbCreneaux,numSalle));
+
+	public List<Salle> getTableSalle() {
+		return tableSalle;
 	}
+
+
 }
